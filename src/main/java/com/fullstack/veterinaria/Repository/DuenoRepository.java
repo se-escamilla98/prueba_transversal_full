@@ -10,6 +10,7 @@ import java.util.List;
 
 @Repository
 public interface DuenoRepository extends JpaRepository<Dueno, Integer> {
-    Dueno findByRutAndCorreoElectronico(String Rut, String correo);
+    Dueno findByRutAndCorreo(String rut, String correo);
+
 
 }

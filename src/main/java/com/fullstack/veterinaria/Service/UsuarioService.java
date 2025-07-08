@@ -22,6 +22,6 @@ public class UsuarioService {
         usuarioRepository.deleteById(Id);
     }
     public Usuario findByRutAndCorreo(String rut, String usuarioCorreo) {
-        return usuarioRepository.findByRutAndCorreo(rut, usuarioCorreo);
+        return usuarioRepository.findByRutAndUsuarioCorreo(rut, usuarioCorreo);
     }
 }

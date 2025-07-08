@@ -23,7 +23,7 @@ public class Usuario {
     @Column(length = 100, nullable = false)
     private String nombreCompleto;
 
-    @Column(length = 100, nullable = false, unique = true)
+    @Column(name= "usuario_correo", length = 100, nullable = false, unique = true)
     private String usuarioCorreo;
 
 }

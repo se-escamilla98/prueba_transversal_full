@@ -24,6 +24,6 @@ public class DuenoService {
         duenoRepository.deleteById(Id);
     }
     public Dueno findByRutAndEmail(String rut, String email) {
-        return duenoRepository.findByRutAndCorreoElectronico(rut, email);
+        return duenoRepository.findByRutAndCorreo(rut, email);
     }
 }
