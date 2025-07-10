@@ -29,13 +29,13 @@ public class DuenoService {
     // METODO ELIMINAR DUENO
     public boolean eliminarDueno(Integer duenoId) {
         if (!duenoRepository.existsById(duenoId)) {
-            System.out.println("❌ Dueño no encontrado.");
+            System.out.println("Dueño no encontrado.");
             return false;
         }
 
         List<Mascota> mascotasAsociadas = mascotaRepository.findByDuenoDuenoId(duenoId);
         if (!mascotasAsociadas.isEmpty()) {
-            System.out.println("⚠️ No se puede eliminar el dueño. Tiene mascotas asociadas.");
+            System.out.println("No se puede eliminar el dueño. Tiene mascotas asociadas.");
             return false;
         }
 

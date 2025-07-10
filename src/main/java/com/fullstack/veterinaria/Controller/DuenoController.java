@@ -15,19 +15,19 @@ public class DuenoController {
     @Autowired
     private DuenoService duenoService;
 
-    // ✅ LISTAR TODOS LOS DUEÑOS
+    // LISTAR TODOS LOS DUEÑOS
     @GetMapping
     public ResponseEntity<?> listarDueno() {
         return ResponseEntity.ok(duenoService.listarDueno());
     }
 
-    // ✅ CREAR UN NUEVO DUEÑO
+    // CREAR UN NUEVO DUEÑO
     @PostMapping
     public ResponseEntity<Dueno> crearDueno(@RequestBody Dueno dueno) {
         return ResponseEntity.ok(duenoService.registrarDueno(dueno));
     }
 
-    // ✅ OBTENER DUEÑO POR ID (CORREGIDO)
+    // OBTENER DUEÑO POR ID
     @GetMapping("/{id}")
     public ResponseEntity<Dueno> obtenerDueno(@PathVariable Integer id) {
         Dueno dueno = duenoService.getDuenoById(id);
@@ -35,7 +35,7 @@ public class DuenoController {
         return ResponseEntity.notFound().build();
     }
 
-    // ✅ ELIMINAR DUEÑO
+    // ELIMINAR DUEÑO
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarDueno(@PathVariable Integer id) {
         boolean eliminado = duenoService.eliminarDueno(id);
@@ -46,7 +46,7 @@ public class DuenoController {
         }
     }
 
-    // ✅ ACTUALIZACIÓN COMPLETA (PUT)
+    // ACTUALIZACIÓN COMPLETA (PUT)
     @PutMapping("/{id}")
     public ResponseEntity<Dueno> actualizarDueno(@PathVariable Integer id, @RequestBody Dueno nuevo) {
         Dueno actualizado = duenoService.actualizarDueno(id, nuevo);
@@ -54,7 +54,7 @@ public class DuenoController {
         return ResponseEntity.notFound().build();
     }
 
-    // ✅ ACTUALIZACIÓN PARCIAL (PATCH)
+    // ACTUALIZACIÓN PARCIAL (PATCH)
     @PatchMapping("/{id}")
     public ResponseEntity<Dueno> actualizarDuenoParcial(@PathVariable Integer id, @RequestBody Dueno parcial) {
         Dueno actualizado = duenoService.actualizarDuenoParcial(id, parcial);
@@ -62,7 +62,7 @@ public class DuenoController {
         return ResponseEntity.notFound().build();
     }
 
-    // ✅ BUSCAR POR RUT Y CORREO
+    // BUSCAR POR RUT Y CORREO
     @GetMapping("/buscar/{rut}/{email}")
     public ResponseEntity<?> findByRutAndEmail(
             @PathVariable("rut") String rut,

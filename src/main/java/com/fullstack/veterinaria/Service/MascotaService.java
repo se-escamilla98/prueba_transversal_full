@@ -41,7 +41,7 @@ public class MascotaService {
             }
 
             if (!consultaRepository.findByMascota_MascotaId(mascotaId).isEmpty()) {
-                System.out.println("⚠️ No se puede eliminar: la mascota tiene consultas asociadas");
+                System.out.println("No se puede eliminar: la mascota tiene consultas asociadas");
                 return false;
             }
 
@@ -49,7 +49,7 @@ public class MascotaService {
             return true;
 
         } catch (Exception e) {
-            System.out.println("⚠️ Error al eliminar mascota: " + e.getMessage());
+            System.out.println("Error al eliminar mascota: " + e.getMessage());
             return false;
         }
     }

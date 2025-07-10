@@ -63,7 +63,7 @@ public class MascotaController {
     }
 
 
-    // PATCH - Actualización parcial
+    // PATCH - Actualización  de mascota
     @PatchMapping("/{id}")
     public ResponseEntity<?> actualizarMascotaParcial(
             @PathVariable("id") Integer id,
@@ -81,7 +81,7 @@ public class MascotaController {
         }
     }
 
-
+    //DELETE - BORRAR MASCOTA POR ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminarMascota(@PathVariable("id") Integer id) {
         boolean eliminado = mascotaService.eliminarMascota(id);
