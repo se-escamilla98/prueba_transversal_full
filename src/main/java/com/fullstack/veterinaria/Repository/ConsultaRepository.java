@@ -7,10 +7,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.Date;
+import java.util.List;
 
 public interface ConsultaRepository extends JpaRepository<Consulta, Integer> {
 
     @Query("SELECT c FROM Consulta c WHERE c.fechaConsulta = :fechaConsulta AND c.mascota = :mascota")
     Consulta buscarPorFechaYmascota(@Param("fechaConsulta") Date fechaConsulta,
                                     @Param("mascota") Mascota mascota);
+
+    List<Consulta> findByMascota_MascotaId(Integer mascotaId);
+
+
 }

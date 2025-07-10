@@ -23,6 +23,17 @@ public class ConsultaController {
     @Autowired
     private MascotaRepository mascotaRepository;
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminarConsulta(@PathVariable Integer id) {
+        try {
+            consultaService.eliminarConsulta(id);
+            return ResponseEntity.ok("Consulta eliminada exitosamente");
+        } catch (Exception e) {
+            return ResponseEntity.status(404).body("Consulta no encontrada");
+        }
+    }
+
+
     @GetMapping
     public ResponseEntity<?> listarConsultas() {
         return ResponseEntity.ok(consultaService.listarConsulta());
