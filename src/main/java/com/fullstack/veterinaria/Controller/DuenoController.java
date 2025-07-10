@@ -35,7 +35,7 @@ public class DuenoController {
         return ResponseEntity.notFound().build();
     }
 
-    // ELIMINAR DUEÑO
+    // ELIMINAR DUEÑO SIN MASCOTAS ASOCIADAS
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminarDueno(@PathVariable Integer id) {
         boolean eliminado = duenoService.eliminarDueno(id);
